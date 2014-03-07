@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define GLEW_STATIC
+#include <GL/glew.h>
+
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
@@ -36,6 +39,9 @@ int main(void) {
     glfwTerminate();
     exit(EXIT_FAILURE);
   }
+
+  glewExperimental = GL_TRUE;
+  glewInit();
 
   glfwMakeContextCurrent(window);
 
