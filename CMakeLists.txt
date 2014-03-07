@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 2.8)
 
-set(GLFW_SOURCE_DIR "external/glfw-3.0.4")
-set(GLM_SOURCE_DIR "external/glm-0.9.5.2")
+set(GLFW_SOURCE_DIR "external/glfw")
+set(GLM_SOURCE_DIR "external/glm")
 
+# Building only the GLFW lib
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "")
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "")
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "")
