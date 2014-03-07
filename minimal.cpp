@@ -23,7 +23,13 @@ int main(void) {
   if (!glfwInit())
     exit(EXIT_FAILURE);
 
-  window = glfwCreateWindow(640, 480, "Simple example", NULL, NULL);
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
+  glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+  glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+
+  //  window = glfwCreateWindow(640, 480, "Simple example", glfwGetPrimaryMonitor(), NULL); // full screen
+  window = glfwCreateWindow(640, 480, "Simple Example", NULL, NULL);
   if (!window) {
     glfwTerminate();
     exit(EXIT_FAILURE);
