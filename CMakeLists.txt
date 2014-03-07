@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 set(GLFW_SOURCE_DIR "external/glfw")
 set(GLM_SOURCE_DIR "external/glm")
+set(GLEW_SOURCE_DIR "external/glew")
 
 # Building only the GLFW lib
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "")
@@ -14,7 +15,8 @@ add_subdirectory(${GLFW_SOURCE_DIR})
 
 include_directories(${GLFW_SOURCE_DIR}/include
                     ${GLFW_SOURCE_DIR}/deps
-                    ${GLM_SOURCE_DIR})
+                    ${GLM_SOURCE_DIR}
+                    ${GLEW_SOURCE_DIR}/include/)
 
 set(GETOPT ${GLFW_SOURCE_DIR}/deps/getopt.h
            ${GLFW_SOURCE_DIR}/deps/getopt.c)
