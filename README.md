@@ -25,6 +25,13 @@ Before compiling, you should first generate the `include/` folder for GLFW:
     cmake ..
     make
 
+### Building with XCode
+
+    mkdir xcode && cd xcode
+    cmake -G "XCode" ..
+
+Then open the generated `Project.xcodeproj` project.
+
 ## Using a different dependency version
 
 If you want to use a different version of any dependency tracked as a submodule, you just need to checkout the desired version in the repository:
