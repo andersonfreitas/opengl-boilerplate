@@ -1,14 +1,16 @@
 # OpenGL C++ Boilerplate
 
-A cross-platform boilerplate project for OpenGL using GLFW and GLEW in C++. Compilation is done with `cmake`
+A cross-platform boilerplate project for OpenGL using GLFW and GLEW in C++. Compilation is done with `cmake`.
+
+I want to keep this project as simple as possible and is target for those who are learning OpenGL.
 
 ## Cloning
 
-The `external/` contains all the depencies used, but they are tracked using git submodules. In order to compile the program, you should first clone the repository and then download the dependencies with `git submodule init` and `git submodule update`
+The `external/` folder contains all the external dependencies used, and they are tracked using git submodules. In order to compile the program, you should first clone the repository and then download the dependencies with `git submodule init` and `git submodule update`
 
-Alternatively, with can achieve this in a one-line as follows:
+Alternatively, you can achieve this with a one-liner as follows:
 
-    git clone git@github.com:andersonfreitas/opengl-minimal-cpp.git --recursive
+    git clone git@github.com:andersonfreitas/opengl-boilerplate.git --recursive
 
 ## Initializing GLEW
 
@@ -19,11 +21,13 @@ Before compiling, you should first generate the `include/` folder for GLFW:
 
 ## Build
 
-Create a folder `build` and then run `make`
+    mkdir build && cd build
+    cmake ..
+    make
 
-## Using different dependency versions
+## Using a different dependency version
 
-If you want to use a different version of any dependency tracked as a submodule, you just need to checkout the desired in the repository:
+If you want to use a different version of any dependency tracked as a submodule, you just need to checkout the desired version in the repository:
 
     cd external/my_dep
     git checkout XXX
