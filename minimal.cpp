@@ -8,6 +8,8 @@
 
 using namespace glm;
 
+#define GLSL(src) #src
+
 static void error_callback(int error, const char *description) {
   fputs(description, stderr);
 }
