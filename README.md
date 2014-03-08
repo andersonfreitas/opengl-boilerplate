@@ -2,7 +2,7 @@
 
 A cross-platform boilerplate project for OpenGL using GLFW and GLEW in C++. Compilation is done with `cmake`.
 
-I want to keep this project as simple as possible and is target for those who are learning OpenGL.
+I want to keep this project as simple as possible and is targetted to those who are learning modern OpenGL.
 
 ## Cloning
 
