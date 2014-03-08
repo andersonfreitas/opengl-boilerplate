@@ -19,6 +19,9 @@ static void key_callback(GLFWwindow *window, int key, int scancode, int action, 
     glfwSetWindowShouldClose(window, GL_TRUE);
 }
 
+static void render(GLFWwindow *window) {
+}
+
 int main(void) {
   GLFWwindow *window;
 
@@ -49,7 +52,7 @@ int main(void) {
   glfwSetKeyCallback(window, key_callback);
 
   while (!glfwWindowShouldClose(window)) {
-    // code here
+    render(window);
 
     glfwSwapBuffers(window);
     glfwPollEvents();
