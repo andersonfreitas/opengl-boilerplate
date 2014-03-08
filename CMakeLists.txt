@@ -18,6 +18,10 @@ include_directories(${GLFW_SOURCE_DIR}/include
                     ${GLM_SOURCE_DIR}
                     ${GLEW_SOURCE_DIR}/include/)
 
+add_definitions(
+  -DGLEW_STATIC
+)
+
 add_executable("minimal" minimal.cpp)
 target_link_libraries("minimal" glfw ${GLFW_LIBRARIES})
 
