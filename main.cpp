@@ -54,6 +54,7 @@ int main(void) {
 
     glfwSwapBuffers(window);
     glfwPollEvents();
+    //glfwWaitEvents();
   }
 
   glfwDestroyWindow(window);
