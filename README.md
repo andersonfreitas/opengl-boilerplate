@@ -28,7 +28,7 @@ Before compiling, you should first generate the `include/` folder for GLFW:
 ### Building with XCode
 
     mkdir xcode && cd xcode
-    cmake -G "XCode" ..
+    cmake -G "Xcode" ..
 
 Then open the generated `Project.xcodeproj` project.
 

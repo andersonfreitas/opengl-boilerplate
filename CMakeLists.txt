@@ -29,17 +29,17 @@ add_definitions(
   -DGLEW_STATIC
 )
 
-add_executable("minimal" minimal.cpp)
-target_link_libraries("minimal" glfw ${GLFW_LIBRARIES} glew)
+add_executable("opengl-boilerplate" main.cpp)
+target_link_libraries("opengl-boilerplate" glfw ${GLFW_LIBRARIES} glew)
 
 if (APPLE)
-  set(APP_NAME "OpenGL Minimal App")
+  set(APP_NAME "OpenGL Boilerplate")
 
-  add_executable(${APP_NAME} MACOSX_BUNDLE minimal.cpp icon.icns)
+  add_executable(${APP_NAME} MACOSX_BUNDLE main.cpp icon.icns)
 
   set_target_properties(${APP_NAME} PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME ${APP_NAME})
   set_target_properties(${APP_NAME} PROPERTIES MACOSX_BUNDLE_SHORT_VERSION_STRING "1.0")
-  set_target_properties(${APP_NAME} PROPERTIES MACOSX_BUNDLE_LONG_VERSION_STRING "1.0.0.0.0.1")
+  set_target_properties(${APP_NAME} PROPERTIES MACOSX_BUNDLE_LONG_VERSION_STRING "1.0")
 
   set_target_properties(${APP_NAME} PROPERTIES MACOSX_BUNDLE_ICON_FILE "icon.icns")
   set_source_files_properties("icon.icns" PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
