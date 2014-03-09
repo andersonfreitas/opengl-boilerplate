@@ -32,6 +32,10 @@ Before compiling, you should first generate the `include/` folder for GLFW:
 
 Then open the generated `Project.xcodeproj` project.
 
+### Building with Visual Studio
+
+CMake comes with a diverse options of [generators](http://www.cmake.org/cmake/help/v2.8.8/cmake.html#section_Generators). Use the CMake GUI on Windows to automatically create a project solution based on this project.
+
 ## Using a different dependency version
 
 If you want to use a different version of any dependency tracked as a submodule, you just need to checkout the desired version in the repository:
