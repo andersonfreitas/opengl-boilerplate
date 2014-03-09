@@ -32,6 +32,8 @@ Before compiling, you should first generate the `include/` folder for GLFW:
 
 Then open the generated `Project.xcodeproj` project.
 
+If you don't have CMake installed on your Mac, the easist way is to install is with [Homebrew](http://brew.sh) using `brew install cmake`
+
 ### Building with Visual Studio
 
 CMake comes with a diverse options of [generators](http://www.cmake.org/cmake/help/v2.8.8/cmake.html#section_Generators). Use the CMake GUI on Windows to automatically create a project solution based on this project.
@@ -51,3 +53,4 @@ If you want to use a different version of any dependency tracked as a submodule,
  * [GLFW](https://github.com/glfw/glfw)
  * [GLEW](http://github.com/nigels-com/glew.git)
  * [GLM](https://github.com/g-truc/glm)
+ * [CMake](http://www.cmake.org/)
