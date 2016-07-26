@@ -29,24 +29,32 @@ add_definitions(
   -DGLEW_STATIC
 )
 
-add_executable("opengl-boilerplate" main.cpp)
-target_link_libraries("opengl-boilerplate" glfw ${GLFW_LIBRARIES} glew)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+
 
 if (APPLE)
-  set(APP_NAME "OpenGL Boilerplate")
+    set(APP_NAME "OpenGLBoilerplate")
 
-  # if (EXISTS icon.icns)
-    add_executable(${APP_NAME} MACOSX_BUNDLE main.cpp icon.icns)
-    set_source_files_properties("icon.icns" PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
-  # else ()
-    # add_executable(${APP_NAME} MACOSX_BUNDLE main.cpp)
-  # endif ()
+    if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/icon.icns)
+        add_executable(${APP_NAME} MACOSX_BUNDLE main.cpp icon.icns)
+        set_source_files_properties("icon.icns" PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
+        set_target_properties(${APP_NAME} PROPERTIES MACOSX_BUNDLE_ICON_FILE ${CMAKE_CURRENT_SOURCE_DIR}/icon.icns)
+    else ()
 
-  target_link_libraries(${APP_NAME} glfw ${OPENGL_glu_LIBRARY} ${GLFW_LIBRARIES} glew)
-  set_target_properties(${APP_NAME} PROPERTIES MACOSX_BUNDLE_ICON_FILE "icon.icns")
+        add_executable(${APP_NAME} MACOSX_BUNDLE main.cpp)
+    endif ()
 
-  set_target_properties(${APP_NAME} PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME ${APP_NAME})
-  set_target_properties(${APP_NAME} PROPERTIES MACOSX_BUNDLE_SHORT_VERSION_STRING "1.0")
-  set_target_properties(${APP_NAME} PROPERTIES MACOSX_BUNDLE_LONG_VERSION_STRING "1.0")
-  set_target_properties(${APP_NAME} PROPERTIES MACOSX_BUNDLE_INFO_STRING "OpenGL boilerplate example app")
+#    set_target_properties(${APP_NAME} PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules/app.plist.in)
+
+    set_target_properties(${APP_NAME} PROPERTIES MACOSX_BUNDLE_BUNDLE_NAME ${APP_NAME})
+    set_target_properties(${APP_NAME} PROPERTIES MACOSX_BUNDLE_SHORT_VERSION_STRING "1.0")
+    set_target_properties(${APP_NAME} PROPERTIES MACOSX_BUNDLE_LONG_VERSION_STRING "1.0")
+    set_target_properties(${APP_NAME} PROPERTIES MACOSX_BUNDLE_INFO_STRING "OpenGL boilerplate example app")
+else()
+    set(APP_NAME "opengl-boilerplate")
+    add_executable(${APP_NAME} main.cpp)
 endif()
+
+target_link_libraries(${APP_NAME} glfw ${GLFW_LIBRARIES} glew)
+
+

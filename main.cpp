@@ -20,6 +20,7 @@ static void key_callback(GLFWwindow *window, int key, int scancode, int action, 
 }
 
 static void render(GLFWwindow *window) {
+  glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT|GL_ACCUM_BUFFER_BIT);
 }
 
 int main(void) {
